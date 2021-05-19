@@ -1,10 +1,20 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request, session
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/play', methods = ['POST'])
+def new():
+    # session['player'] = request.form['name']
+    return redirect(url_for('play'))
+
+@app.route('/play')
+def play():
+    # player = session['player']
+    return render_template('play.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
