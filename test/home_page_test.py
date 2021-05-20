@@ -2,11 +2,8 @@ import unittest, os
 from splinter import Browser
 
 FLASK_ENV='test'
-if(os.getenv('CI', False)):
-    executable_path = {'executable_path':'./chromedriver'}
-    browser = Browser('chrome', **executable_path, headless=True)
-else:
-    browser = Browser('chrome', headless=True)
+
+browser = Browser('chrome', headless=True)
 
 class HomePageTest(unittest.TestCase):
     def test_title(self):
