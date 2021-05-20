@@ -1,11 +1,16 @@
-import unittest
+import unittest, os
 from splinter import Browser
 
 FLASK_ENV='test'
 
+if(os.getenv('CI', False)):
+    executable_path = {'executable_path':'./env/chromedriver-Linux64'}
+    browser = Browser('chrome', **executable_path, headless=True)
+else:
+    browser = Browser('chrome', headless=True)
+
 class HomePageTest(unittest.TestCase):
     def test_title(self):
-        browser = Browser('chrome', headless=True)
         browser.visit('http://localhost:5000')
         assert browser.is_text_present('Rock Paper Scissors Lizard Spock')
 
