@@ -1,7 +1,10 @@
 language: python
 python:
   - "3.9"
+addons:
+  chrome: stable
 before_script:
   - python app.py &
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 script:
   - pytest
