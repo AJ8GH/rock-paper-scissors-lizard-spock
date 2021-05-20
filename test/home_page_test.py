@@ -2,7 +2,7 @@ import unittest, os
 from splinter import Browser
 
 FLASK_ENV='test'
-browser = Browser('chrome', headless=True)
+browser = Browser(headless=True)
 
 class HomePageTest(unittest.TestCase):
     def test_title(self):
