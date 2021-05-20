@@ -15,8 +15,7 @@ def new():
 
 @app.route('/play')
 def play():
-    player = session['player']
-    return render_template('play.html')
+    return render_template('play.html', player=session['player'])
 
 if __name__ == '__main__':
     app.run()
