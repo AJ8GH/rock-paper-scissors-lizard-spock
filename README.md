@@ -61,6 +61,7 @@ pip install -r requirements.txt
 * `Werkzeug==2.0.1`
 
 ## Specification
+
 - user should be able to enter their name before the game
 - user will be presented the choices (rock, paper, scissors, lizard, spock)
 - user can choose one option

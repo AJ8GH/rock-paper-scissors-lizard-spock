@@ -64,3 +64,5 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1621706264769	Marionette	ERROR	[19] No reply from Marionette:Register
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.

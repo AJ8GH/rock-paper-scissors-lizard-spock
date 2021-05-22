@@ -11,3 +11,5 @@ before_script:
   - python run.py &
 script:
   - pytest
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
