@@ -10,7 +10,7 @@ class HomePageTest(unittest.TestCase):
         assert browser.is_text_present('Rock Paper Scissors Lizard Spock')
 
     def test_entering_name(self):
-        browser = Browser('chrome', headless=True)
+        browser = Browser(headless=True)
         browser.visit('http://localhost:5000')
         browser.fill('name', 'test name')
         button = browser.find_by_name('play')
