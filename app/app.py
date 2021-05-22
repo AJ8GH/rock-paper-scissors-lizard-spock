@@ -1,8 +1,10 @@
-import os
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask
+
+from flask import render_template, redirect, url_for, request, session
 
 app = Flask(__name__)
-app.secret_key = os.environ['SESSION_SECRET']
+
+app.config.from_object('config')
 
 @app.route('/')
 def index():
@@ -16,6 +18,3 @@ def new():
 @app.route('/play')
 def play():
     return render_template('play.html', player=session['player'])
-
-if __name__ == '__main__':
-    app.run()
