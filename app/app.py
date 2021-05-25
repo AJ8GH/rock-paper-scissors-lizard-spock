@@ -18,5 +18,5 @@ def new():
 
 @app.route('/play')
 def play():
-    player = Player(session['player'])
+    player = Player(session.get('player', 'player'))
     return render_template('play.html', player=player)
