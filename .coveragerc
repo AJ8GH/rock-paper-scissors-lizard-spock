@@ -1,9 +1,9 @@
 [run]
 omit =
   *env*
-  *__init__*
   */usr/local/lib*
   */usr/local/env*
+  *run.py*
 
 [coverage:report]
 fail_under = 90
