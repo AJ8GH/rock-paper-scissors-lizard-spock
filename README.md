@@ -1,7 +1,7 @@
 Rock Paper Scissors Lizard Spock
 ================================
 
-[![Build Status](https://travis-ci.com/AJ8GH/rock-paper-scissors-lizard-spock.svg?branch=main)](https://travis-ci.com/AJ8GH/rock-paper-scissors-lizard-spock) [![Maintainability](https://api.codeclimate.com/v1/badges/d6fdb7d04a1d7549515f/maintainability)](https://codeclimate.com/github/AJ8GH/rock-paper-scissors-lizard-spock/maintainability) [![BCH compliance](https://bettercodehub.com/edge/badge/AJ8GH/rock-paper-scissors-lizard-spock?branch=main)](https://bettercodehub.com/)
+[![Build Status](https://travis-ci.com/AJ8GH/rock-paper-scissors-lizard-spock.svg?branch=main)](https://travis-ci.com/AJ8GH/rock-paper-scissors-lizard-spock) [![codecov](https://codecov.io/gh/AJ8GH/rock-paper-scissors-lizard-spock/branch/main/graph/badge.svg?token=RQBF1D03HY)](https://codecov.io/gh/AJ8GH/rock-paper-scissors-lizard-spock) [![Maintainability](https://api.codeclimate.com/v1/badges/d6fdb7d04a1d7549515f/maintainability)](https://codeclimate.com/github/AJ8GH/rock-paper-scissors-lizard-spock/maintainability) [![BCH compliance](https://bettercodehub.com/edge/badge/AJ8GH/rock-paper-scissors-lizard-spock?branch=main)](https://bettercodehub.com/)
 
 Built with Python and Flask
 

@@ -1,11 +1,3 @@
-# import unittest
-# from flask import Flask
-# from werkzeug.wrappers import response
-# import app
-
-# app.testing = True
-
-
 import pytest
 
 from app import app
