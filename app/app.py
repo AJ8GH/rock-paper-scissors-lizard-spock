@@ -1,4 +1,5 @@
 from flask import Flask
+from .models.player import Player
 
 from flask import render_template, redirect, url_for, request, session
 
@@ -17,4 +18,5 @@ def new():
 
 @app.route('/play')
 def play():
-    return render_template('play.html', player=session['player'])
+    player = Player(session['player'])
+    return render_template('play.html', player=player)
