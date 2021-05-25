@@ -1,6 +1,6 @@
 import pytest, random
 
-from app.models.computer import Computer
+from app.models import Computer
 
 def test_computer_can_make_a_choice():
     random.seed(0)

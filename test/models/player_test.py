@@ -1,6 +1,6 @@
 import pytest
 
-from app.models.player import Player
+from app.models import Player
 
 def test_it_has_a_name():
     player = Player('test')
