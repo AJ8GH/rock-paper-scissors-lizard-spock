@@ -1,6 +1,6 @@
 from . import Computer, Player
 
-class Game:
-    def __init__(self):
-        self.computer = Computer()
-        self.player = Player()
+class Game():
+    def __init__(self, player, computer = Computer()):
+        self.computer = computer
+        self.player = player
