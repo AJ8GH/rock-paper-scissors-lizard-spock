@@ -1,7 +1,9 @@
+import os
 from flask import Flask
+from flask import render_template, redirect, url_for, request, session
+
 from .models.player import Player
 
-from flask import render_template, redirect, url_for, request, session
 
 app = Flask(__name__)
 
@@ -13,10 +15,10 @@ def index():
 
 @app.route('/play', methods = ['POST'])
 def new():
-    session['player'] = request.form['name']
+    session['player'] = request.form.get('name', 'human')
     return redirect(url_for('play'))
 
 @app.route('/play')
 def play():
-    player = Player(session.get('player', 'player'))
+    player = Player(session.get('player', 'human'))
     return render_template('play.html', player=player)
