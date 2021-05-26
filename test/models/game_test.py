@@ -82,3 +82,18 @@ def test_it_knows_lizard_poisons_spock():
     doubles.verify()
 
     doubles.teardown()
+
+def test_it_knows_spock_smashes_scissors():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Spock')
+    allow(computer).choice.and_return('Scissors')
+    assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Scissors')
+    allow(computer).choice.and_return('Spock')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
