@@ -5,7 +5,8 @@ class Game():
         'Rock': { 'Scissors': 'Win', 'Lizard': 'Win' },
         'Scissors': { 'Rock': 'Lose', 'Paper': 'Win' },
         'Paper': { 'Scissors': 'Lose' },
-        'Lizard': { 'Rock': 'Lose' },
+        'Lizard': { 'Rock': 'Lose', 'Spock': 'Win' },
+        'Spock': { 'Lizard': 'Lose' },
     }
 
     def __init__(self, player, computer = Computer()):
