@@ -53,6 +53,21 @@ def test_it_knows_scissors_cuts_paper():
 
     doubles.teardown()
 
+def test_it_knows_paper_covers_rock():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Paper')
+    allow(computer).choice.and_return('Rock')
+    assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Rock')
+    allow(computer).choice.and_return('Paper')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
+
 def test_it_knows_rock_crushes_lizard():
     game = Game(player, computer)
 
