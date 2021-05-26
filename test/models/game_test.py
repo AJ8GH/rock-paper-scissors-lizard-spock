@@ -23,21 +23,6 @@ def test_it_has_a_computer():
 
     doubles.teardown()
 
-def test_it_knows_rock_crushes_scissors():
-    game = Game(player, computer)
-
-    allow(player).choice.and_return('Rock')
-    allow(computer).choice.and_return('Scissors')
-    assert game.result() == 'Win'
-
-    allow(player).choice.and_return('Scissors')
-    allow(computer).choice.and_return('Rock')
-    assert game.result() == 'Lose'
-
-    doubles.verify()
-
-    doubles.teardown()
-
 def test_it_knows_scissors_cuts_paper():
     game = Game(player, computer)
 
@@ -168,6 +153,49 @@ def test_it_knows_spock_vaporises_rock():
     allow(player).choice.and_return('Rock')
     allow(computer).choice.and_return('Spock')
     assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
+
+
+def test_it_knows_rock_crushes_scissors():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Rock')
+    allow(computer).choice.and_return('Scissors')
+    assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Scissors')
+    allow(computer).choice.and_return('Rock')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
+
+def test_it_knows_when_its_a_draw():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Rock')
+    allow(computer).choice.and_return('Rock')
+    assert game.result() == 'Draw'
+
+    allow(player).choice.and_return('Paper')
+    allow(computer).choice.and_return('Paper')
+    assert game.result() == 'Draw'
+
+    allow(player).choice.and_return('Scissors')
+    allow(computer).choice.and_return('Scissors')
+    assert game.result() == 'Draw'
+
+    allow(player).choice.and_return('Lizard')
+    allow(computer).choice.and_return('Lizard')
+    assert game.result() == 'Draw'
+
+    allow(player).choice.and_return('Spock')
+    allow(computer).choice.and_return('Spock')
+    assert game.result() == 'Draw'
 
     doubles.verify()
 
