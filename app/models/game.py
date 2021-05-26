@@ -1,4 +1,4 @@
-from . import Computer, Player
+from . import Computer
 
 class Game():
     WIN_MATRIX = {

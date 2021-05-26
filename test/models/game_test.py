@@ -200,3 +200,6 @@ def test_it_knows_when_its_a_draw():
     doubles.verify()
 
     doubles.teardown()
+
+if __name__ == '__main__':
+    pytest.main()
