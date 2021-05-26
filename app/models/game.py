@@ -4,8 +4,8 @@ class Game():
     WIN_MATRIX = {
         'Rock': { 'Scissors': 'Win', 'Lizard': 'Win' },
         'Scissors': { 'Rock': 'Lose', 'Paper': 'Win', 'Spock': 'Lose', 'Lizard': 'Win' },
-        'Paper': { 'Scissors': 'Lose' },
-        'Lizard': { 'Rock': 'Lose', 'Spock': 'Win', 'Scissors': 'Lose' },
+        'Paper': { 'Scissors': 'Lose', 'Lizard': 'Lose' },
+        'Lizard': { 'Rock': 'Lose', 'Spock': 'Win', 'Scissors': 'Lose', 'Paper': 'Win' },
         'Spock': { 'Lizard': 'Lose', 'Scissors': 'Win' },
     }
 

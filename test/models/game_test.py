@@ -112,3 +112,18 @@ def test_it_knows_scissors_decapitates_lizard():
     doubles.verify()
 
     doubles.teardown()
+
+def test_it_knows_lizard_eats_paper():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Lizard')
+    allow(computer).choice.and_return('Paper')
+    assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Paper')
+    allow(computer).choice.and_return('Lizard')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
