@@ -45,9 +45,24 @@ def test_it_knows_scissors_cuts_paper():
     allow(computer).choice.and_return('Paper')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Scissors')
-    allow(computer).choice.and_return('Paper')
+    allow(player).choice.and_return('Paper')
+    allow(computer).choice.and_return('Scissors')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
+
+def test_it_knows_rock_crushes_lizard():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Rock')
+    allow(computer).choice.and_return('Lizard')
     assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Lizard')
+    allow(computer).choice.and_return('Rock')
+    assert game.result() == 'Lose'
 
     doubles.verify()
 

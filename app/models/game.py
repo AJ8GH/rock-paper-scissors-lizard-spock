@@ -2,9 +2,10 @@ from . import Computer, Player
 
 class Game():
     WIN_MATRIX = {
-        'Rock': { 'Scissors': 'Win' },
+        'Rock': { 'Scissors': 'Win', 'Lizard': 'Win' },
         'Scissors': { 'Rock': 'Lose', 'Paper': 'Win' },
         'Paper': { 'Scissors': 'Lose' },
+        'Lizard': { 'Rock': 'Lose' },
     }
 
     def __init__(self, player, computer = Computer()):
