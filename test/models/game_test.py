@@ -127,3 +127,18 @@ def test_it_knows_lizard_eats_paper():
     doubles.verify()
 
     doubles.teardown()
+
+def test_it_knows_paper_disproves_spock():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Paper')
+    allow(computer).choice.and_return('Spock')
+    assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Spock')
+    allow(computer).choice.and_return('Paper')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()

@@ -4,9 +4,9 @@ class Game():
     WIN_MATRIX = {
         'Rock': { 'Scissors': 'Win', 'Lizard': 'Win' },
         'Scissors': { 'Rock': 'Lose', 'Paper': 'Win', 'Spock': 'Lose', 'Lizard': 'Win' },
-        'Paper': { 'Scissors': 'Lose', 'Lizard': 'Lose' },
+        'Paper': { 'Scissors': 'Lose', 'Lizard': 'Lose', 'Spock': 'Win' },
         'Lizard': { 'Rock': 'Lose', 'Spock': 'Win', 'Scissors': 'Lose', 'Paper': 'Win' },
-        'Spock': { 'Lizard': 'Lose', 'Scissors': 'Win' },
+        'Spock': { 'Lizard': 'Lose', 'Scissors': 'Win', 'Paper': 'Lose' },
     }
 
     def __init__(self, player, computer = Computer()):
