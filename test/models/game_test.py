@@ -4,9 +4,10 @@ from doubles import InstanceDouble, allow
 
 from app.models import Game
 
+player = InstanceDouble('app.models.Player', name='test')
+computer = InstanceDouble('app.models.Computer')
+
 def test_it_can_be_initialize_with_a_player():
-    player = InstanceDouble('app.models.Player', name='test')
-    computer = InstanceDouble('app.models.Computer')
     game = Game(player, computer)
 
     assert game.player.name == 'test'
@@ -15,8 +16,6 @@ def test_it_can_be_initialize_with_a_player():
     doubles.teardown()
 
 def test_it_has_a_computer():
-    player = InstanceDouble('app.models.Player', name='test')
-    computer = InstanceDouble('app.models.Computer')
     game = Game(player, computer)
 
     assert game.computer
@@ -24,15 +23,32 @@ def test_it_has_a_computer():
 
     doubles.teardown()
 
-def test_it_knows_who_wins():
-    player = InstanceDouble('app.models.Player', name='test')
-    computer = InstanceDouble('app.models.Computer')
+def test_it_knows_rock_crushes_scissors():
     game = Game(player, computer)
 
     allow(player).choice.and_return('Rock')
     allow(computer).choice.and_return('Scissors')
+    assert game.result() == 'Win'
 
-    assert game.result() == 'Player'
+    allow(player).choice.and_return('Scissors')
+    allow(computer).choice.and_return('Rock')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
+
+def test_it_knows_scissors_cuts_paper():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Scissors')
+    allow(computer).choice.and_return('Paper')
+    assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Scissors')
+    allow(computer).choice.and_return('Paper')
+    assert game.result() == 'Win'
+
     doubles.verify()
 
     doubles.teardown()
