@@ -10,5 +10,10 @@ def test_it_has_a_default_name():
     player = Player()
     assert(player.name == 'Human')
 
+def test_it_can_make_a_choice():
+    player = Player()
+    player.choose('Rock')
+    assert(player.choice == 'Rock')
+
 if __name__ == '__main__':
     pytest.main()
