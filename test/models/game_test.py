@@ -142,3 +142,18 @@ def test_it_knows_paper_disproves_spock():
     doubles.verify()
 
     doubles.teardown()
+
+def test_it_knows_spock_vaporises_rock():
+    game = Game(player, computer)
+
+    allow(player).choice.and_return('Spock')
+    allow(computer).choice.and_return('Rock')
+    assert game.result() == 'Win'
+
+    allow(player).choice.and_return('Rock')
+    allow(computer).choice.and_return('Spock')
+    assert game.result() == 'Lose'
+
+    doubles.verify()
+
+    doubles.teardown()
