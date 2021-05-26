@@ -3,9 +3,9 @@ from . import Computer, Player
 class Game():
     WIN_MATRIX = {
         'Rock': { 'Scissors': 'Win', 'Lizard': 'Win' },
-        'Scissors': { 'Rock': 'Lose', 'Paper': 'Win', 'Spock': 'Lose' },
+        'Scissors': { 'Rock': 'Lose', 'Paper': 'Win', 'Spock': 'Lose', 'Lizard': 'Win' },
         'Paper': { 'Scissors': 'Lose' },
-        'Lizard': { 'Rock': 'Lose', 'Spock': 'Win' },
+        'Lizard': { 'Rock': 'Lose', 'Spock': 'Win', 'Scissors': 'Lose' },
         'Spock': { 'Lizard': 'Lose', 'Scissors': 'Win' },
     }
 
