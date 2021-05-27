@@ -13,7 +13,7 @@ def test_it_has_a_default_name():
 def test_it_can_make_a_choice():
     player = Player()
     player.choose('Rock')
-    assert(player.choice == 'Rock')
+    assert(player.get_choice() == 'Rock')
 
 if __name__ == '__main__':
     pytest.main()

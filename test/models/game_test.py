@@ -26,12 +26,12 @@ def test_it_has_a_computer():
 def test_it_knows_scissors_cuts_paper():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Scissors')
-    allow(computer).choice.and_return('Paper')
+    allow(player).get_choice.and_return('Scissors')
+    allow(computer).get_choice.and_return('Paper')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Paper')
-    allow(computer).choice.and_return('Scissors')
+    allow(player).get_choice.and_return('Paper')
+    allow(computer).get_choice.and_return('Scissors')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -41,12 +41,12 @@ def test_it_knows_scissors_cuts_paper():
 def test_it_knows_paper_covers_rock():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Paper')
-    allow(computer).choice.and_return('Rock')
+    allow(player).get_choice.and_return('Paper')
+    allow(computer).get_choice.and_return('Rock')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Rock')
-    allow(computer).choice.and_return('Paper')
+    allow(player).get_choice.and_return('Rock')
+    allow(computer).get_choice.and_return('Paper')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -56,12 +56,12 @@ def test_it_knows_paper_covers_rock():
 def test_it_knows_rock_crushes_lizard():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Rock')
-    allow(computer).choice.and_return('Lizard')
+    allow(player).get_choice.and_return('Rock')
+    allow(computer).get_choice.and_return('Lizard')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Lizard')
-    allow(computer).choice.and_return('Rock')
+    allow(player).get_choice.and_return('Lizard')
+    allow(computer).get_choice.and_return('Rock')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -71,12 +71,12 @@ def test_it_knows_rock_crushes_lizard():
 def test_it_knows_lizard_poisons_spock():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Lizard')
-    allow(computer).choice.and_return('Spock')
+    allow(player).get_choice.and_return('Lizard')
+    allow(computer).get_choice.and_return('Spock')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Spock')
-    allow(computer).choice.and_return('Lizard')
+    allow(player).get_choice.and_return('Spock')
+    allow(computer).get_choice.and_return('Lizard')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -86,12 +86,12 @@ def test_it_knows_lizard_poisons_spock():
 def test_it_knows_spock_smashes_scissors():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Spock')
-    allow(computer).choice.and_return('Scissors')
+    allow(player).get_choice.and_return('Spock')
+    allow(computer).get_choice.and_return('Scissors')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Scissors')
-    allow(computer).choice.and_return('Spock')
+    allow(player).get_choice.and_return('Scissors')
+    allow(computer).get_choice.and_return('Spock')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -101,12 +101,12 @@ def test_it_knows_spock_smashes_scissors():
 def test_it_knows_scissors_decapitates_lizard():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Scissors')
-    allow(computer).choice.and_return('Lizard')
+    allow(player).get_choice.and_return('Scissors')
+    allow(computer).get_choice.and_return('Lizard')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Lizard')
-    allow(computer).choice.and_return('Scissors')
+    allow(player).get_choice.and_return('Lizard')
+    allow(computer).get_choice.and_return('Scissors')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -116,12 +116,12 @@ def test_it_knows_scissors_decapitates_lizard():
 def test_it_knows_lizard_eats_paper():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Lizard')
-    allow(computer).choice.and_return('Paper')
+    allow(player).get_choice.and_return('Lizard')
+    allow(computer).get_choice.and_return('Paper')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Paper')
-    allow(computer).choice.and_return('Lizard')
+    allow(player).get_choice.and_return('Paper')
+    allow(computer).get_choice.and_return('Lizard')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -131,12 +131,12 @@ def test_it_knows_lizard_eats_paper():
 def test_it_knows_paper_disproves_spock():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Paper')
-    allow(computer).choice.and_return('Spock')
+    allow(player).get_choice.and_return('Paper')
+    allow(computer).get_choice.and_return('Spock')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Spock')
-    allow(computer).choice.and_return('Paper')
+    allow(player).get_choice.and_return('Spock')
+    allow(computer).get_choice.and_return('Paper')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -146,12 +146,12 @@ def test_it_knows_paper_disproves_spock():
 def test_it_knows_spock_vaporises_rock():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Spock')
-    allow(computer).choice.and_return('Rock')
+    allow(player).get_choice.and_return('Spock')
+    allow(computer).get_choice.and_return('Rock')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Rock')
-    allow(computer).choice.and_return('Spock')
+    allow(player).get_choice.and_return('Rock')
+    allow(computer).get_choice.and_return('Spock')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -162,12 +162,12 @@ def test_it_knows_spock_vaporises_rock():
 def test_it_knows_rock_crushes_scissors():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Rock')
-    allow(computer).choice.and_return('Scissors')
+    allow(player).get_choice.and_return('Rock')
+    allow(computer).get_choice.and_return('Scissors')
     assert game.result() == 'Win'
 
-    allow(player).choice.and_return('Scissors')
-    allow(computer).choice.and_return('Rock')
+    allow(player).get_choice.and_return('Scissors')
+    allow(computer).get_choice.and_return('Rock')
     assert game.result() == 'Lose'
 
     doubles.verify()
@@ -177,24 +177,24 @@ def test_it_knows_rock_crushes_scissors():
 def test_it_knows_when_its_a_draw():
     game = Game(player, computer)
 
-    allow(player).choice.and_return('Rock')
-    allow(computer).choice.and_return('Rock')
+    allow(player).get_choice.and_return('Rock')
+    allow(computer).get_choice.and_return('Rock')
     assert game.result() == 'Draw'
 
-    allow(player).choice.and_return('Paper')
-    allow(computer).choice.and_return('Paper')
+    allow(player).get_choice.and_return('Paper')
+    allow(computer).get_choice.and_return('Paper')
     assert game.result() == 'Draw'
 
-    allow(player).choice.and_return('Scissors')
-    allow(computer).choice.and_return('Scissors')
+    allow(player).get_choice.and_return('Scissors')
+    allow(computer).get_choice.and_return('Scissors')
     assert game.result() == 'Draw'
 
-    allow(player).choice.and_return('Lizard')
-    allow(computer).choice.and_return('Lizard')
+    allow(player).get_choice.and_return('Lizard')
+    allow(computer).get_choice.and_return('Lizard')
     assert game.result() == 'Draw'
 
-    allow(player).choice.and_return('Spock')
-    allow(computer).choice.and_return('Spock')
+    allow(player).get_choice.and_return('Spock')
+    allow(computer).get_choice.and_return('Spock')
     assert game.result() == 'Draw'
 
     doubles.verify()

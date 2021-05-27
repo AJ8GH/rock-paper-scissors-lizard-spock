@@ -6,5 +6,5 @@ class Player:
     def choose(self, choice):
         self.choice = choice
 
-    def choice(self):
+    def get_choice(self):
         return self.choice

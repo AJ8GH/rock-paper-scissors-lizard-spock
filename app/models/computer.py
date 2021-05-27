@@ -9,5 +9,5 @@ class Computer:
     def choose(self):
         self.choice = random.choice(self.CHOICES)
 
-    def choice(self):
+    def get_choice(self):
         return self.choice

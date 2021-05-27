@@ -24,6 +24,8 @@ class Game():
         self.player = player
 
     def result(self):
-        if self.player.choice() == self.computer.choice():
+        if self.player.get_choice() == self.computer.get_choice():
             return 'Draw'
-        return self.WIN_MATRIX[self.player.choice()][self.computer.choice()]
+
+        player_matrix = self.WIN_MATRIX[self.player.get_choice()]
+        return player_matrix[self.computer.get_choice()]
