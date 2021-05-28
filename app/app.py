@@ -2,7 +2,7 @@ import os
 from flask import Flask
 from flask import render_template, redirect, url_for, request, session
 
-from .models.player import Player
+from .models import Player, Game
 
 
 app = Flask(__name__)
@@ -21,4 +21,5 @@ def new():
 @app.route('/play')
 def play():
     player = Player(session.get('player', 'human'))
-    return render_template('play.html', player=player)
+    game = Game(player)
+    return render_template('play.html', game=game)
