@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from flask import render_template, redirect, url_for, request, session
+from flask import render_template, redirect, url_for, request, session, make_response, json
 
 from .models import Player, Game
 
@@ -17,6 +17,7 @@ def index():
 def new():
     session['player'] = request.form.get('name', 'human')
     return redirect(url_for('play'))
+
 
 @app.route('/play')
 def play():

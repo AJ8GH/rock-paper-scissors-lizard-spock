@@ -13,6 +13,6 @@ def test_index_route_exists(client):
     response = client.get('/')
     assert response.status_code == 200
 
-def test_play_route(client):
+def test_get_play_route(client):
     response = client.get('/play')
     assert response.status_code == 200
